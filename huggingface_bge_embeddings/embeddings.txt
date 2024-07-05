@@ -1,0 +1,1 @@
+Huggingface embeddings will be downloaded and the files will be stored in this directory to avoid downloading the embeddings eachtime, you run the app.
