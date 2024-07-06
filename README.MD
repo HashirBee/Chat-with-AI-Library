@@ -25,7 +25,14 @@ I have used Groq's Fast AI inference, utilizing Meta's opensource Llama 3 LLM to
 - [Groq Inference Engine](https://wow.groq.com/why-groq/)
 
 
+## Books I used
+[Google Drive](https://drive.google.com/drive/folders/16t0mG5ZOtTdmPY-Mn9WrmO5IAfCpv64N?usp=sharing)
+
+
 ## Deployment Instructions
+
+
+Due to insufficient computing resources, I only used first few documents from each book in the vector DB. If you want to make a large-scale professional app, please insert all the required books fully into vector DB and also go on to fine-tuning.
 
 To deploy this project run, clone the repository, get API keys for Groq, HuggingFace and Pinecone, pip install requirements.txt and run following command in cmd
 
