@@ -10,7 +10,7 @@ I have used Groq's Fast AI inference, utilizing Meta's opensource Llama 3 LLM to
 
 ## Demo
 Please visit the following link to talk with the AI library.
-[Talk with AI Library](54.226.48.251:8080)
+[Talking AI Library](http://54.226.48.251:8080)
 
 If the link doesn't open, please get in touch with me so I can provide you the live one.
 
