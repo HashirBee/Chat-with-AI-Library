@@ -31,7 +31,10 @@ If the link doesn't open, please get in touch with me so I can provide you the l
 - [Groq Inference Engine](https://wow.groq.com/why-groq/)
 
 
-## Books I used
+## Books used
+
+Following are all the books used to develop this chatbot:
+
 [Google Drive](https://drive.google.com/drive/folders/16t0mG5ZOtTdmPY-Mn9WrmO5IAfCpv64N?usp=sharing)
 
 
