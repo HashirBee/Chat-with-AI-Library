@@ -4,10 +4,15 @@
 _Interact with a talking AI Library through this GenAI chatbot !!!_
 
 This repository contains the code for Talking AI Library, a GenAI chatbot, designed as a GenAI project that can be a starting point and an indicator of something really useful.
-The idea is that I used Langchain framework and Pinecone vectorstore to create a RAG-powered LLM that answers the questions related to AI especially GenAI. It uses some of the most famous books as a context. I uploaded only one book to show an instance. Locally, I used more than 10 books to develop the LLM app.
+The idea is that I used Langchain framework and Pinecone vectorstore to create a RAG-powered LLM that answers the questions related to AI especially GenAI. It uses some of the most famous books as a context. I uploaded only one book in data folder for an instance however, I used more than 10 books as knowledge-base to develop the LLM app.
 
-I have used Groq's Fast AI inference, utilizing Meta's opensource Llama 3 LLM to build this RAG chatbot.
+I have used Groq's Fast AI inference, utilizing Meta's opensource Llama 3 LLM to build this RAG chatbot. I used AWS Sagemaker's Jupyter Lab space to build this RAG application to avoid any storage and compute overhead. 
 
+## Demo
+Please visit the following link to talk with the AI library.
+[Talk with AI Library](54.226.48.251:8080)
+
+If the link doesn't open, please get in touch with me so I can provide you the live one.
 
 ## Features
 
