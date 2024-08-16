@@ -2,16 +2,19 @@ import os
 from langchain_groq import ChatGroq
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains import create_retrieval_chain
+from langchain_pinecone import PineconeVectorStore
 from src.helper import get_embeddings, create_pc_index, create_vectorstore
 from src.prompt import prompt
 from pinecone import Pinecone
 from flask import Flask, render_template, request
+from tqdm.autonotebook import tqdm
 from dotenv import load_dotenv
 
 load_dotenv()
 
 ## load the GROQ KEY
 groq_api_key=os.getenv('GROQ_API_KEY')
+pinecone_api_key=os.getenv('PINECONE_API_KEY')
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 
@@ -26,18 +29,30 @@ prompt = prompt
 EMBEDDINGS_PATH = "./huggingface_bge_embeddings"
 model_name = "BAAI/bge-large-en"
 embeddings = get_embeddings(EMBEDDINGS_PATH, model_name)
+PDFs_folder_path = "data/"
+pc = Pinecone(api_key=pinecone_api_key)
 
-# Create the index in Pinecone Vector DB
-# If the index already exist, you can add more docs to it
-# or simply use the docs already in the index
-# For creating new index, uncomment the next line
+""" 
+Create the index in Pinecone Vector DB
+If the index already exist, you can add more docs to it
+or simply use the docs already in the index
+For creating new index, uncomment the next line 
+"""
 # create_pc_index(index_name,dimension=1024)  
 
-# If you want to use already existing index 
-PDFs_folder_path = "data/"
+""" 
+If you want to use already existing index and add more docs to it, uncomment 
+# the following lines
+"""
+# index_name = "genai-library"
+# vectorstore = create_vectorstore(PDFs_folder_path, index_name, embeddings)
+
+# If you want to use only the existing index as it is
 index_name = "genai-library"
-pc = Pinecone()
-vectorstore = create_vectorstore(PDFs_folder_path, index_name, embeddings)
+vectorstore = PineconeVectorStore.from_existing_index(
+    index_name=index_name,
+    embedding=embeddings
+)
 
 
 # Create retreival chain
