@@ -37,10 +37,7 @@ If the link doesn't open, please get in touch with me so I can provide you the l
 
 ## Deployment Instructions
 
-
-Due to insufficient computing resources, I only used first few documents from each book in the vector DB. If you want to make a large-scale professional app, please insert all the required books fully into vector DB and also go on to fine-tuning.
-
-To deploy this project run, clone the repository, get API keys for Groq, HuggingFace and Pinecone, pip install requirements.txt and run following command in cmd
+To deploy and play with the app, clone the repository in your environment, get API keys for Groq, HuggingFace and Pinecone, pip install requirements.txt and run following cmd command in the project directory.
 
 ```bash
   python app.py
