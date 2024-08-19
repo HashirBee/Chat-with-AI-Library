@@ -9,7 +9,8 @@ from transformers import AutoTokenizer, AutoModel
 from dotenv import load_dotenv
 
 load_dotenv()
-pc = Pinecone()
+pinecone_api_key=os.getenv('PINECONE_API_KEY')
+pc = Pinecone(api_key=pinecone_api_key)
 
 ## Download and save embedding model and configs locally 
 def get_embeddings(EMBEDDINGS_PATH, model_name):
