@@ -57,4 +57,3 @@ def create_vectorstore(PDFs_folder_path,index_name,embeddings):
         docs = text_splitter.split_documents(docs[:20])
         vectorstore.add_documents(docs)
     return vectorstore
-
