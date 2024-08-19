@@ -27,6 +27,7 @@ def get_embeddings(EMBEDDINGS_PATH, model_name):
     return HuggingFaceBgeEmbeddings(cache_folder=EMBEDDINGS_PATH, model_name=model_name)
 
 
+
 ## create pinecone index
 def create_pc_index(index_name,dimension=1024):   
     pc = Pinecone()
@@ -58,4 +59,3 @@ def create_vectorstore(PDFs_folder_path,index_name,embeddings):
         docs = text_splitter.split_documents(docs[:20])
         vectorstore.add_documents(docs)
     return vectorstore
-
