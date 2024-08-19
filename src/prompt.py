@@ -3,12 +3,12 @@ from langchain_core.prompts import ChatPromptTemplate
 
 prompt=ChatPromptTemplate.from_template(
 """
-Answer the questions based on the provided context only.
-Please provide the most accurate response based on the question
+Please answer the questions accurately based on the following context only.
 <context>
 {context}
 <context>
 Questions:{input}
 
+Please format the answer into paragraphs that are logical and increase readability.
 """
 )
