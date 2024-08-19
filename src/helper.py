@@ -13,22 +13,18 @@ pc = Pinecone()
 
 ## Download and save embedding model and configs locally 
 def get_embeddings(EMBEDDINGS_PATH, model_name):
-    print("Downloading HuggingFace embeddings...")
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModel.from_pretrained(model_name)
-    tokenizer.save_pretrained(EMBEDDINGS_PATH)
-    model.save_pretrained(EMBEDDINGS_PATH)
-    # if not os.path.exists(EMBEDDINGS_PATH):
-    #     print("Downloading HuggingFace embeddings...")
-    #     tokenizer = AutoTokenizer.from_pretrained(model_name)
-    #     model = AutoModel.from_pretrained(model_name)
-    #     tokenizer.save_pretrained(EMBEDDINGS_PATH)
-    #     model.save_pretrained(EMBEDDINGS_PATH)
-    # else:
-    #     print("Loading HuggingFace embeddings from disk...")
-    #     tokenizer = AutoTokenizer.from_pretrained(EMBEDDINGS_PATH)
-    #     model = AutoModel.from_pretrained(EMBEDDINGS_PATH)
+    if not os.path.exists(EMBEDDINGS_PATH):
+        print("Downloading HuggingFace embeddings...")
+        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        model = AutoModel.from_pretrained(model_name)
+        tokenizer.save_pretrained(EMBEDDINGS_PATH)
+        model.save_pretrained(EMBEDDINGS_PATH)
+    else:
+        print("Loading HuggingFace embeddings from disk...")
+        tokenizer = AutoTokenizer.from_pretrained(EMBEDDINGS_PATH)
+        model = AutoModel.from_pretrained(EMBEDDINGS_PATH)
     return HuggingFaceBgeEmbeddings(cache_folder=EMBEDDINGS_PATH, model_name=model_name)
+
 
 
 ## create pinecone index
