@@ -51,7 +51,8 @@ If you want to use already existing index and add more docs to it, uncomment
 index_name = "genai-library"
 vectorstore = PineconeVectorStore.from_existing_index(
     index_name=index_name,
-    embedding=embeddings
+    embedding=embeddings,
+    pinecone_api_key=pinecone_api_key
 )
 
 
