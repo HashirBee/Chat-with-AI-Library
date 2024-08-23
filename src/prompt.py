@@ -9,6 +9,8 @@ Please answer the questions accurately based on the following context only.
 <context>
 Questions:{input}
 
-Please format the answer into paragraphs that are logical and increase readability.
+Please format the answer into well-structured html. Use appropriate tags
+for paragraphs like <p> and tags like <h4> or <h5> or <h6> for headings) 
+instead of plain text.
 """
 )
